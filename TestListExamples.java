@@ -18,4 +18,14 @@ public class TestListExamples {
     List<String> expected = Arrays.asList("a", "a", "b", "c", "d");
     assertEquals(expected, merged);
   }
+  @Test(timeout = 500)
+  public void testFilter() {
+    List<String> words = Arrays.asList("moon", "sun", "star", "moon", "moon");
+    List<String> filtered = ListExamples.filter(words, new IsMoon());
+    List<String> expected = Arrays.asList("moon", "moon", "moon");
+    assertEquals(expected, filtered);
+  }
 }
+
+// add more tests written like the previous one, but with edge cases.
+// use real Strings inside the example test lists.
